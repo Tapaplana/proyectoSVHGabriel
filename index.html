@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="imagenes/favicon/favicon-32x32.png" rel="icon" type="image">
+	<link rel="stylesheet" type="text/css" href="style.css" title="Inicio">
+    <title>Ecos del Universo - Inicio</title>
+    
+</head>
+<body class="dark-theme">
+
+  <!-- HEADER GLOBAL -->
+  <header class="header">
+      <a href="#" class="logo"></a> 
+      <a href="index.html">               
+        <img src="imagenes/logos/logo7.png" alt="Ecos del Universo" class="logo-img">  
+      </a> 
+      
+     <!-- MENÚ HAMBURGUESA SIN JS -->
+	<input type="checkbox" id="menu-toggle" class="menu-toggle">
+		<label for="menu-toggle" class="hamburger">
+			<span></span>
+			<span></span>
+			<span></span>
+		</label>
+	<nav class="nav-mobile">
+		<ul>
+			<li><a href="index.html">Inicio</a></li>
+			<li><a href="avistamientos.html">Avistamientos</a></li>
+			<li><a href="documentos.html">Documentos</a></li>
+			<li><a href="ciencia.html">Ciencia</a></li>
+			<li><a href="teorias.html">Teorías</a></li>
+			<li><a href="investigacion.html">Investigación</a></li>
+			<li><a href="sobre.html">Sobre</a></li>
+			<li><a href="contacto.html">Contacto</a></li>
+		</ul>
+	</nav>
+    <div class="header-container">                   
+      <nav class="nav">
+        <ul>
+			<li class="active"><a href="index.html">Inicio</a></li>
+			<li><a href="avistamientos.html">Avistamientos</a></li>
+			<li><a href="documentos.html">Documentos</a></li>
+			<li><a href="ciencia.html">Ciencia</a></li>
+			<li><a href="teorias.html">Teorías</a></li>
+			<li><a href="investigacion.html">Investigación</a></li>
+			<li><a href="sobre.html">Sobre</a></li>
+			<li><a href="contacto.html">Contacto</a></li>
+		</ul>
+      </nav>
+    </div>
+ </header>
+
+  <!-- HOME HERO -->
+  <section id="home" class="hero">
+    <h1>ECOS DEL UNIVERSO</h1>
+    <p>Donde el cielo deja de ser silencio.</p>
+    <button class="boton" onclick="document.getElementById('ultimos-articulos').scrollIntoView({behavior: 'smooth'});">Explorar</button>
+  </section>
+
+  <!-- ÚLTIMOS ARTÍCULOS -->
+  <section id="ultimos-articulos">
+    <div class="pagina-titulo">
+      <h1>Últimos artículos</h1>
+      <p>Análisis recientes sobre fenómenos y documentos.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card">
+        <div class="img-placeholder13"></div>
+        <h3>Articulos desclasificados</h3>
+        <p>Desclasificación Masiva de Documentos Oficiales en EE. UU.</p>
+        <a href="docs/extraterrestres.html" target="_blank" rel="noopener noreferrer" class="boton">Leer más</a>
+      </div>
+      <div class="card">
+        <div class="img-placeholder14"></div>
+        <h3>"No Estamos Solos"</h3>
+        <p>El cambio de paradigma en la búsqueda de vida extraterrestre.</p>
+        <a href="docs/reportaje_vida_extraterrestre.html" target="_blank" rel="noopener noreferrer" class="boton">Leer más</a>
+      </div>
+      <div class="card">
+        <div class="img-placeholder15"></div>
+        <h3>Hallazgo espeluznante</h3>
+        <p>Un Extraterrestre Fue Encontrado Muerto En Rusia.</p>
+        <a href="docs/extra_muerto.html" target="_blank" rel="noopener noreferrer" class="boton">Leer más</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASOS DESTACADOS -->
+  <section>
+    <div class="pagina-titulo">
+      <h1>Casos destacados</h1>
+      <p>Expedientes clave en la historia de la ufología.</p>
+    </div>
+    <div class="caso-grid">
+      <div class="caso-card" onclick="location.href='docs/incidente_roswell.html'">Roswell</div>
+      <div class="caso-card" onclick="location.href='docs/luces_phoenix.html'">Phoenix Lights</div>
+      <div class="caso-card" onclick="location.href='docs/incidente_rendlesham.html'">Rendlesham</div>
+    </div>
+  </section>
+
+  <!-- QUÉ ES ESTE BLOG -->
+  <section>
+    <div class="pagina-titulo">
+      <h1>¿Qué es este blog?</h1>
+    </div>
+    <p class="center-text">
+      Investigación seria, misterio real.  
+      Un espacio donde la ciencia, los documentos oficiales y los testimonios se analizan con rigor,
+      mente abierta y pensamiento crítico.
+    </p>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter">
+    <div class="pagina-titulo">
+      <h1>Informes clasificados</h1>
+      <p>Recibe análisis y casos directamente en tu correo.</p>
+    </div>
+    <div class="center-text">
+      <form action="https://formsubmit.co/grozalen@gmail.com" method="POST" onsubmit="event.preventDefault(); alert('¡Mensaje enviado con éxito!');">
+        <input type="email" name="email" placeholder="Tu email" required>
+        <button class="boton" type="submit">Suscribirse</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p><a href="html/enlaces.html">Enlaces rápidos</a> | <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Redes</a> | <a href="html/avisolegal.html">Aviso legal</a> | <a href="html/contacto.html">Contacto</a></p>
+  </footer>
+
+</body>
+</html>

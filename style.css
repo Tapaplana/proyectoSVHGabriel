@@ -1,0 +1,807 @@
+/* ==================
+   ESTILOS GENERALES 
+   ================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body.dark-theme {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #0b0c10;
+    color: #c5c6c7;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Cabecera / Navegación Global */
+.header {
+    background-color: #1f2833;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.logo {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+/*.logo {
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: #66fcf1;
+    text-shadow: 0 0 5px rgba(102, 252, 241, 0.3);
+}*/
+.logo-img {
+    height: 50px; /* Altura controlada para mantener proporción */
+    width: auto;  /* El ancho se ajusta automáticamente */
+    display: block;
+    margin: 0 auto;
+    padding: 0;
+}
+ .bar {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+        }
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav a {
+    color: #c5c6c7;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+    padding-bottom: 5px;
+}
+
+.nav a:hover, .nav li.active a {
+    color: #66fcf1;
+    border-bottom: 2px solid #66fcf1;
+}
+.menu-toggle {
+  display: none;
+}
+.nav-mobile {
+  display: none;
+}
+/* Sección Hero (Home) */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(11, 12, 16, 0.8), rgba(11, 12, 16, 0.9)), url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?auto=format&fit=crop&w=1200&q=80') no-repeat center center/cover;
+    background-image: url("\imagenes/fondos/home.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    padding: 40px 20px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    letter-spacing: 4px;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(102, 252, 241, 0.5);
+}
+
+.hero p {
+    font-size: 24px;
+    color: #c5c6c7;
+    margin-bottom: 30px;
+}
+
+/* Botones */
+.boton {
+    background-color: #66fcf1;
+    color: #0b0c10;
+    border: none;
+    padding: 12px 30px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+.boton:hover {
+    background-color: #45a29e;
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.4);
+    transform: translateY(-2px);
+}
+
+/* Secciones de Contenido Comunes */
+.fondo-a {
+	background-image: url("\imagenes/fondos/avistamientos.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    padding: 40px 20px;
+    }
+.fondo-d {
+	background-image: url("\imagenes/fondos/documentos.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    padding: 40px 20px;
+    }
+.fondo-c {
+	background-image: url("\imagenes/fondos/ciencia.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    padding: 40px 20px;
+    }
+.fondo-t {
+	background-image: url("\imagenes/fondos/teorias.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    padding: 40px 20px;
+    }
+.fondo-i {
+	background-image: url("\imagenes/fondos/investigacion.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    padding: 40px 20px;
+    }
+.fondo-s {
+	background-image: url("\imagenes/fondos/archivo.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    padding: 40px 20px;
+    }
+.fondo-ct {
+	background-image: url("\imagenes/fondos/conclusiones.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    padding: 40px 20px;
+    }
+section {
+    padding: 60px 5%;
+    border-bottom: 1px solid #1f2833;
+}
+
+.pagina-titulo {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.pagina-titulo h1 {
+    font-size: 32px;
+    color: #66fcf1;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.pagina-titulo p {
+    color: #45a29e;
+    font-size: 20px;
+}
+
+.center-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 20px;
+    line-height: 1.8;
+}
+
+/* Grid layout general */
+.grid-3, .grid-4 {
+    display: grid;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* Tarjetas (Cards) */
+.card {
+	background: #111;
+	border: 1px solid #333;
+	padding: 20px;
+	transition: border-color .3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(102, 252, 241, 0.2);
+}
+
+.img-placeholder {
+  background: #222;
+  height: 150px;
+  margin-bottom: 15px;
+}
+.img-placeholder1 {
+    background-image: url("\imagenes/hipo.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    height: 150px;
+    margin-bottom: 15px;
+    
+    
+}
+.img-placeholder2 {
+	background-image: url("\imagenes/atmosfera.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    height: 150px;
+    margin-bottom: 15px;
+    
+ 
+}
+.img-placeholder3 {
+	background-image: url("\imagenes/pentagono.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    height: 150px;
+    margin-bottom: 15px;
+    
+ 
+}
+.img-placeholder4 {
+	background-image: url("\imagenes/parke.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    height: 150px;
+    margin-bottom: 15px;
+}
+.img-placeholder5 {
+	background-image: url("\imagenes/luz.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    height: 150px;
+    margin-bottom: 15px;
+}
+.img-placeholder6 {
+	background-image: url("\imagenes/extra.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    height: 150px;
+    margin-bottom: 15px;
+    }
+    .img-placeholder7 {
+	background-image: url("\imagenes/nave.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    height: 150px;
+    margin-bottom: 15px;
+    }
+    .img-placeholder8 {
+	background-image: url("\imagenes/mediciones.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    height: 150px;
+    margin-bottom: 15px;
+   }
+      .img-placeholder9 {
+	background-image: url("\imagenes/exoplaneta.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    height: 150px;
+    margin-bottom: 15px;
+   }
+     .img-placeholder10 {
+	background-image: url("\imagenes/astro.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    height: 150px;
+    margin-bottom: 15px;
+   }
+    .img-placeholder11 {
+	background-image: url("\imagenes/anomalies.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    height: 150px;
+    margin-bottom: 15px;
+   }
+      .img-placeholder12 {
+	background-image: url("\imagenes/tele.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    height: 150px;
+    margin-bottom: 15px;
+   }
+   .img-placeholder13 {
+	background-image: url("\imagenes/articulo1.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    height: 150px;
+    margin-bottom: 15px;
+   }
+   .img-placeholder14{
+	background-image: url("\imagenes/observatorio.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    height: 150px;
+    margin-bottom: 15px;
+   }
+   .img-placeholder15 {
+	background-image: url("\imagenes/extra_muerto.jpg");
+    background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    height: 150px;
+    margin-bottom: 15px;
+   }
+.card h3 {
+    color: #fff;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.card p {
+    font-size: 14px;
+    color: #c5c6c7;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+/* Casos destacados */
+.caso-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.caso-card {
+    background-color: #1f2833;
+    border: 1px solid #66fcf1;
+    padding: 30px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.caso-card:hover {
+    background-color: #66fcf1;
+    color: #0b0c10;
+}
+
+/* Newsletter */
+.newsletter {
+    background-color: #1f2833;
+    padding: 50px 5%;
+}
+
+.newsletter input {
+    padding: 12px 20px;
+    font-size: 16px;
+    width: 100%;
+    max-width: 350px;
+    border: 1px solid #45a29e;
+    border-radius: 4px 0 0 4px;
+    background-color: #0b0c10;
+    color: #fff;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.newsletter .boton {
+    border-radius: 0 4px 4px 0;
+}
+
+@media(max-width: 600px) {
+    .newsletter input {
+        border-radius: 4px;
+        margin-right: 0;
+    }
+    .newsletter .boton {
+        border-radius: 4px;
+        width: 100%;
+    }
+}
+
+/* Filtros (Avistamientos) */
+.filters {
+    background-color: #1f2833;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #45a29e;
+    margin-bottom: 40px;
+}
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.filter-grid select {
+    background-color: #0b0c10;
+    color: #fff;
+    border: 1px solid #45a29e;
+    padding: 10px;
+    border-radius: 4px;
+    outline: none;
+}
+
+/* Listado de Casos */
+.casos-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.caso-row {
+    background-color: #1f2833;
+    border: 1px solid #45a29e;
+    border-radius: 6px;
+    display: flex;
+    overflow: hidden;
+}
+
+.caso-img {
+	width: 200px;
+    background-image: url("\imagenes/Roswell.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    padding: 40px 20px;
+}
+.caso-img2 {
+   width: 200px;
+    background-image: url("\imagenes/PhoenixLights.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    padding: 40px 20px;
+}
+.caso-img3 {
+    width: 200px;
+    background-image: url("\imagenes/Avistamiento.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    padding: 40px 20px;
+}
+.caso-info {
+    padding: 20px;
+    flex-grow: 1;
+}
+
+.caso-info h3 {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.caso-info p {
+    font-size: 14px;
+    color: #c5c6c7;
+    margin-bottom: 15px;
+}
+
+@media(max-width: 768px) {
+    .caso-row {
+        flex-direction: column;
+    }
+    .caso-img {
+        width: 100%;
+        height: 150px;
+    }
+}
+
+/* Tarjetas de Documentos */
+.doc-card {
+    background-color: #1f2833;
+    border-left: 5px solid #66fcf1;
+    border-top: 1px solid #45a29e;
+    border-right: 1px solid #45a29e;
+    border-bottom: 1px solid #45a29e;
+    border-radius: 4px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.doc-icon {
+    font-size: 40px;
+    color: #66fcf1;
+}
+
+.doc-card h3 {
+    color: #fff;
+    margin-bottom: 5px;
+}
+
+.doc-card p {
+    font-size: 14px;
+    color: #c5c6c7;
+    margin-bottom: 15px;
+}
+
+/* Seccion Sobre el Proyecto */
+.about-container {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+}
+
+.about-photo1 {
+	width: 300px;
+    height: 400px;
+    background-image: url("\imagenes/extraterrestre.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+    padding: 40px 20px;
+}
+.about-photo {
+    width: 300px;
+    height: 400px;
+    background-color: #1f2833;
+    border: 1px solid #45a29e;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.about-text h2 {
+    color: #66fcf1;
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+.about-text h2:first-of-type {
+    margin-top: 0;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.about-list {
+    list-style-type: square;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.about-list li {
+    margin-bottom: 8px;
+}
+
+@media(max-width: 900px) {
+    .about-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .about-photo {
+        width: 100%;
+        max-width: 350px;
+        height: 250px;
+    }
+}
+
+/* Formulario de Contacto */
+.contact-container {
+    display: flex;
+    gap: 40px;
+}
+
+.contact-info {
+    flex: 1;
+}
+
+.contact-info h2 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.contact-form {
+    flex: 1.5;
+    background-color: #1f2833;
+    padding: 30px;
+    border-radius: 6px;
+    border: 1px solid #45a29e;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #66fcf1;
+}
+
+.contact-input, .contact-textarea {
+    width: 100%;
+    padding: 12px;
+    background-color: #0b0c10;
+    border: 1px solid #45a29e;
+    color: #fff;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+}
+
+.contact-input:focus, .contact-textarea:focus {
+    border-color: #66fcf1;
+}
+
+.contact-textarea {
+    resize: vertical;
+    height: 120px;
+}
+
+@media(max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+}
+
+
+
+/* MENÚ RESPONSIVE */
+@media (max-width: 768px) {
+/* ============================
+   MENÚ HAMBURGUESA SIN JS
+   ============================ */
+
+.menu-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 22px;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.hamburger span {
+  height: 4px;
+  background: #fff;
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.nav-mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 70%;
+  height: 100vh;
+  background: #0b0c10;
+  padding-top: 80px;
+  z-index: 1000;
+}
+
+.nav-mobile ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-left: 30px;
+}
+
+.nav-mobile a {
+  color: #c5c6c7;
+  font-size: 1.4rem;
+  text-decoration: none;
+}
+
+.nav-mobile a:hover {
+  color: #66fcf1;
+}
+.nav ul {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+
+  .menu-toggle:checked ~ .nav-mobile {
+    display: block;
+  }
+
+  .menu-toggle:checked + .hamburger span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+  .menu-toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-toggle:checked + .hamburger span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+
+/* Cierre automático del menú al pulsar un enlace */
+.nav-mobile a {
+  display: block;
+}
+
+.nav-mobile a:active {
+  opacity: 0.7;
+}
+
+/* Truco CSS para cerrar el menú sin JS */
+.nav-mobile a {
+  cursor: pointer;
+}
+
+.nav-mobile a:focus {
+  outline: none;
+}
+
+/* Cuando se hace clic en un enlace, el checkbox se desmarca */
+.nav-mobile a:active ~ #menu-toggle {
+  display: none;
+}
+}
+/* Footer */
+.footer {
+    background-color: #1f2833;
+    color: #c5c6c7;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    border-top: 1px solid #45a29e;
+    margin-top: auto;
+}
