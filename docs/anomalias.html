@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="..\imagenes/favicon/favicon-32x32.png" rel="icon" type="image">
+    <title>Anomalías Astronómicas</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #161f30;
+            --text-color: #e2e8f0;
+            --accent-color: #38bdf8;
+            --highlight: #f59e0b;
+            --subtle-text: #94a3b8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #2d3748;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-size: 2.3rem;
+        }
+
+        .subtitle {
+            color: var(--subtle-text);
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 1px solid #2d3748;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .anomaly-card {
+            margin-bottom: 25px;
+        }
+
+        .anomaly-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .anomaly-title {
+            color: var(--highlight);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #2d3748;
+        }
+
+        th {
+            background-color: #1e293b;
+            color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Anomalías Astronómicas</h1>
+        <p class="subtitle">Señales, patrones y fenómenos del espacio profundo que desafían las explicaciones convencionales.</p>
+    </header>
+
+    <section>
+        <h2>Fenómenos Destacados</h2>
+
+        <div class="anomaly-card">
+            <div class="anomaly-title">1. La Señal Wow! (1977)</div>
+            <ul>
+                <li><strong>¿Qué es?</strong> Una señal de radio de banda estrecha captada por el radiotelescopio <em>Big Ear</em> de la Universidad Estatal de Ohio durante 72 segundos.</li>
+                <li><strong>Por qué desafía lo convencional:</strong> Tenía una intensidad enorme y una frecuencia (alrededor de 1420 MHz, la línea del hidrógeno) considerada ideal para la comunicación interestelar. Nunca volvió a repetirse a pesar de décadas de monitoreo.</li>
+                <li><strong>Explicaciones:</strong> Desde emisiones producidas por cometas no identificados hasta la hipótesis de una transmisión de origen extraterrestre.</li>
+            </ul>
+        </div>
+
+        <div class="anomaly-card">
+            <div class="anomaly-title">2. Ráfagas Rápidas de Radio (FRBs)</div>
+            <ul>
+                <li><strong>¿Qué son?</strong> Destellos de ondas de radio hiperintensos que duran apenas milisegundos pero liberan la misma energía que el Sol produce en días o semanas.</li>
+                <li><strong>Por qué desafían lo convencional:</strong> Aunque muchas FRBs son eventos únicos, algunas son <strong>periódicas y repetitivas</strong> (como FRB 180916, que se repite cada 16.35 días).</li>
+                <li><strong>Explicaciones:</strong> La teoría principal apunta a <strong>magnetares</strong> (estrellas de neutrones con campos magnéticos extremos), aunque el mecanismo exacto de emisión sigue en debate.</li>
+            </ul>
+        </div>
+
+        <div class="anomaly-card">
+            <div class="anomaly-title">3. La Estrella de Tabby (KIC 8462852)</div>
+            <ul>
+                <li><strong>¿Qué es?</strong> Una estrella situada a unos 1,470 años luz cuyos niveles de brillo sufren caídas drásticas e irregulares de hasta un 22%.</li>
+                <li><strong>Por qué desafía lo convencional:</strong> Las caídas de brillo causadas por exoplanetas son periódicas y pequeñas (usualmente de menos del 1%). Las de Tabby no tienen un patrón fijo y son masivas.</li>
+                <li><strong>Explicaciones:</strong> Enjambres de cometas fragmentados, nubes interplanetarias de polvo denso o, en teorías más exóticas, megaestructuras artificiales (como una Esfera de Dyson).</li>
+            </ul>
+        </div>
+
+        <div class="anomaly-card">
+            <div class="anomaly-title">4. El Objeto Interestelar 'Oumuamua (2017)</div>
+            <ul>
+                <li><strong>¿Qué es?</strong> El primer objeto confirmado que ingresó a nuestro sistema solar procedente del espacio interestelar.</li>
+                <li><strong>Por qué desafía lo convencional:</strong> Tenía una forma extremadamente alargada (parecida a un cigarro o un disco), no mostraba la cola de gas típica de un cometa, y experimentó una <strong>aceleración no gravitacional</strong> al alejarse del Sol.</li>
+                <li><strong>Explicaciones:</strong> Desgasificación invisible de hidrógeno o nitrógeno helado, o una estructura con una relación superficie-masa inusual impulsada por la presión de la radiación solar.</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section>
+        <h2>Resumen de Fenómenos</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Anomalía</th>
+                    <th>Tipo de Fenómeno</th>
+                    <th>Características Principales</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Señal Wow!</strong></td>
+                    <td>Radioemisión puntual</td>
+                    <td>72 segundos, alta intensidad, no repetida.</td>
+                </tr>
+                <tr>
+                    <td><strong>FRBs Repetitivas</strong></td>
+                    <td>Pulsos de radio</td>
+                    <td>Duración de milisegundos, ritmos periódicos en algunos casos.</td>
+                </tr>
+                <tr>
+                    <td><strong>Estrella de Tabby</strong></td>
+                    <td>Atenuación lumínica</td>
+                    <td>Oscurecimiento irregular de hasta un 22%.</td>
+                </tr>
+                <tr>
+                    <td><strong>'Oumuamua</strong></td>
+                    <td>Objeto interestelar</td>
+                    <td>Aceleración anómala sin desgasificación visible.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>Página informativa sobre anomalías astronómicas y misterios del espacio profundo</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

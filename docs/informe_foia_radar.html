@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="..\imagenes/favicon/favicon-32x32.png" rel="icon" type="image">
+    <title>Informe FOIA — Registros de Radar y Trayectorias Anómalas</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --panel-bg: #161b22;
+            --panel-border: #30363d;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-green: #2ea043;
+            --accent-cyan: #388bfd;
+            --accent-orange: #d29922;
+            --accent-red: #f85149;
+            --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            border-bottom: 2px solid var(--panel-border);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .header-title h1 {
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .header-title p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .badge {
+            background-color: rgba(210, 153, 34, 0.15);
+            color: var(--accent-orange);
+            border: 1px solid var(--accent-orange);
+            padding: 0.35rem 0.75rem;
+            font-size: 0.75rem;
+            font-family: var(--font-mono);
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background-color: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .card h2 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--panel-border);
+            padding-bottom: 0.5rem;
+        }
+
+        .card h2::before {
+            content: "■";
+            color: var(--accent-cyan);
+            font-size: 0.8rem;
+        }
+
+        .metric-box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .metric {
+            background-color: rgba(255, 255, 255, 0.03);
+            padding: 0.75rem;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent-cyan);
+        }
+
+        .metric .label {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+        }
+
+        .metric .value {
+            font-size: 1.1rem;
+            font-family: var(--font-mono);
+            color: #fff;
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--panel-border);
+        }
+
+        th {
+            background-color: rgba(255, 255, 255, 0.02);
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-family: var(--font-mono);
+        }
+
+        .tag-red {
+            background-color: rgba(248, 81, 73, 0.15);
+            color: var(--accent-red);
+            border: 1px solid var(--accent-red);
+        }
+
+        .tag-yellow {
+            background-color: rgba(210, 153, 34, 0.15);
+            color: var(--accent-orange);
+            border: 1px solid var(--accent-orange);
+        }
+
+        .tag-blue {
+            background-color: rgba(56, 139, 253, 0.15);
+            color: var(--accent-cyan);
+            border: 1px solid var(--accent-cyan);
+        }
+
+        .callout {
+            background-color: rgba(56, 139, 253, 0.05);
+            border: 1px solid rgba(56, 139, 253, 0.2);
+            border-left: 4px solid var(--accent-cyan);
+            padding: 1rem 1.25rem;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .callout-title {
+            font-weight: bold;
+            color: var(--accent-cyan);
+            margin-bottom: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--panel-border);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="header-title">
+                <h1>Informe FOIA — Registros de Radar</h1>
+                <p>Análisis de Trazas y Trayectorias Anómalas Desclasificadas (FAA / NORAD / US Navy)</p>
+            </div>
+            <span class="badge">FOIA-DECLASS / UNCLASSIFIED</span>
+        </header>
+
+        <div class="callout">
+            <div class="callout-title">Resumen Ejecutivo</div>
+            <p>Los datos primarios de radar obtenidos mediante solicitudes FOIA confirman detecciones métricas objetivas de objetos que exhiben cinemática no convencional. Los parámetros clave incluyen aceleraciones extremas, virajes sin radio cinemático apreciable y estabilidad en corrientes de aire de alta velocidad.</p>
+        </div>
+
+        <section class="grid">
+            <div class="card">
+                <h2>USS Nimitz / USS Princeton (2004)</h2>
+                <p><strong>Origen:</strong> Radar SPY-1 (Armada de EE. UU.)</p>
+                <p>Detección de múltiples trazas descendiendo a velocidades no convencionales desde altitudes orbitales/estratosféricas hacia la superficie marina.</p>
+                
+                <div class="metric-box">
+                    <div class="metric">
+                        <div class="label">Altitud Inicial</div>
+                        <div class="value">80,000 ft</div>
+                    </div>
+                    <div class="metric">
+                        <div class="label">Tiempo Descenso</div>
+                        <div class="value">&lt; 0.78 s</div>
+                    </div>
+                    <div class="metric">
+                        <div class="label">Aceleración Est.</div>
+                        <div class="value">&gt; 100 g</div>
+                    </div>
+                    <div class="metric">
+                        <div class="label">Firma Térmica</div>
+                        <div class="value">Nula</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Incidente Golfo de México (2023)</h2>
+                <p><strong>Origen:</strong> Radar Primario FAA</p>
+                <p>Trazas civiles registran vectores de movimiento discontinuos con cambios angulares bruscos sin reducción de velocidad previa.</p>
+
+                <div class="metric-box">
+                    <div class="metric">
+                        <div class="label">Ángulo de Giro</div>
+                        <div class="value">90° Inst.</div>
+                    </div>
+                    <div class="metric">
+                        <div class="label">Velocidad</div>
+                        <div class="value">&gt; Mach 2</div>
+                    </div>
+                    <div class="metric">
+                        <div class="label">Radio de Giro</div>
+                        <div class="value">0 m</div>
+                    </div>
+                    <div class="metric">
+                        <div class="label">Boom Sónico</div>
+                        <div class="value">No Det.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="card" style="margin-bottom: 2rem;">
+            <h2>Clasificación de Trayectorias Anómalas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Patrón Detectado</th>
+                        <th>Descripción Cinemática</th>
+                        <th>Evaluación Técnica / Explicación Convencional</th>
+                        <th>Nivel Anómalo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Descenso Instantáneo</strong></td>
+                        <td>Caída vertical desde &gt;80,000 ft al nivel del mar en microsegundos/fracciones de segundo.</td>
+                        <td>Excede la resistencia estructural de materiales conocidos. Fricción atmosférica debería generar firma IR extrema.</td>
+                        <td><span class="tag tag-red">ALTO</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Giro en Ángulo Recto</strong></td>
+                        <td>Virajes de 90° a velocidades supersónicas sin desaceleración previa.</td>
+                        <td>Ausencia de fuerza centrípeta observable o desaceleración lateral compatible con aerodinámica de ala fija/rotatoria.</td>
+                        <td><span class="tag tag-red">ALTO</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Estacionamiento en Viento Alto</strong></td>
+                        <td>Permanencia estática frente a jet streams (&gt;120 nudos).</td>
+                        <td>Descarte de globos meteorológicos o deriva atmosférica pasiva. Requiere empuje vectorizado continuo sin pluma de escape.</td>
+                        <td><span class="tag tag-yellow">MEDIO</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>Limitaciones Técnicas y Explicaciones Prácticas (AARO / NASA)</h2>
+            <p style="margin-bottom: 1rem;">A pesar de los datos anómalos, los informes de evaluación de la Oficina de Resolución de Anomalías en Todos los Dominios (AARO) señalan que un porcentaje significativo de detecciones responden a artefactos o limitaciones del sensor:</p>
+            <ul>
+                <li style="margin-left: 1.5rem; margin-bottom: 0.5rem;"><strong>Clutter y Inversión Térmica:</strong> Refracción de la señal radar por capas de temperatura que generan lecturas de velocidad/posición erróneas.</li>
+                <li style="margin-left: 1.5rem; margin-bottom: 0.5rem;"><strong>Falsos Blancos (Ghost Targets):</strong> Interferencias electromagnéticas, enjambres de micro-drones o formaciones de aves.</li>
+                <li style="margin-left: 1.5rem; margin-bottom: 0.5rem;"><strong>Interpolación de Algoritmos:</strong> Los radares civiles unen puntos de barrido discontinuos, creando en pantalla la ilusión óptica de saltos instantáneos de velocidad.</li>
+            </ul>
+        </section>
+
+        <footer>
+            DOCUMENTO GENERADO A PARTIR DE REGISTROS DESCLASIFICADOS FOIA — USO INFORMATIVO Y TÉCNICO
+        </footer>
+    </div>
+
+</body>
+</html>

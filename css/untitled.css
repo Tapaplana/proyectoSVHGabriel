@@ -1,0 +1,13 @@
+body.dark-theme {
+  background-color: #000;
+  color: #ccc;
+  font-family: 'Orbitron', sans-serif;
+}
+/* HOME */
+body.inicio {
+  background: radial-gradient(circle at top, #111 0%, #000 70%);
+  background-image: url("C:\Users\groza\Desktop\curso web\index\pagina\imagenes\fondos\home.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

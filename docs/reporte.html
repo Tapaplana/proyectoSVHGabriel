@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="..\imagenes/favicon/favicon-32x32.png" rel="icon" type="image">
+    <title>Reporte Técnico Nocturno - Registro de Luces Anómalas</title>
+    <style>
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            line-height: 1.6; 
+            color: #e2e8f0; 
+            background-color: #0f172a; 
+            margin: 40px; 
+        }
+        h1 { 
+            color: #38bdf8; 
+            border-bottom: 2px solid #0284c7; 
+            padding-bottom: 10px; 
+            font-size: 24px; 
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        h2 { 
+            color: #0ea5e9; 
+            margin-top: 35px; 
+            font-size: 18px; 
+            border-left: 4px solid #38bdf8;
+            padding-left: 10px;
+        }
+        th { 
+            background-color: #1e293b; 
+            color: #38bdf8; 
+            text-align: left; 
+            padding: 12px; 
+            border: 1px solid #334155;
+        }
+        td { 
+            padding: 12px; 
+            border: 1px solid #334155; 
+            background-color: #1e293b;
+        }
+        table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin-top: 15px; 
+            font-size: 14px; 
+        }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 8px; }
+        strong { color: #f1f5f9; }
+        
+        /* Contenedor del Gráfico */
+        .chart-container {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        /* Firmas */
+        .signature-section {
+            margin-top: 50px;
+            display: flex;
+            justify-content: space-between;
+            page-break-inside: avoid;
+        }
+        .signature-box {
+            width: 45%;
+            text-align: center;
+            border-top: 1px solid #64748b;
+            padding-top: 10px;
+            margin-top: 60px;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        .footer { 
+            margin-top: 60px; 
+            font-size: 12px; 
+            color: #64748b; 
+            text-align: center; 
+            border-top: 1px solid #334155; 
+            padding-top: 20px; 
+        }
+    </style>
+</head>
+<body>
+
+    <h1>REPORTE TÉCNICO DE CAMPO: FENÓMENOS LUMÍNICOS ANÓMALOS</h1>
+    <p><strong>Clasificación:</strong> Registro en Zona Rural (Ausencia de Sonido / Desplazamiento Irregular)<br>
+    <strong>Entorno Operativo:</strong> Condición de Iluminación Crítica (Filtro Rojo / Modo Nocturno Atendido)</p>
+
+    <h2>1. Equipamiento Técnico Recomendado e Instrumentación</h2>
+    <ul>
+        <li><strong>Sistemas de Energía Estables:</strong> 
+            <ul>
+                <li>Baterías de <strong>Litio (Li-FeS2)</strong> o celdas recargables <strong>Li-ion (tipo 18650 / 21700)</strong>. Soportan temperaturas críticas de zonas rurales sin caídas bruscas de voltaje.</li>
+                <li>Powerbanks con celdas de polímero de litio resguardadas en fundas térmicas para evitar la descarga pasiva nocturna.</li>
+            </ul>
+        </li>
+        <li><strong>Software de Análisis e Identificación (Móvil/PC):</strong>
+            <ul>
+                <li><strong>Tráfico Aeroespacial:</strong> <em>Flightradar24</em> o <em>ADSB-Exchange</em> (para aeronaves sin restricciones de transpondedor militar).</li>
+                <li><strong>Tráfico Satelital:</strong> <em>Heavens-Above</em> o <em>Orbitrack</em> para el seguimiento exacto de las constelaciones Starlink y satélites espía en órbita baja.</li>
+                <li><strong>Cartografía Estelar:</strong> <em>Stellarium Mobile Plus</em> o <em>SkySafari</em> para identificar magnitudes de brillo planetario e inversiones ópticas.</li>
+                <li><strong>Herramientas de Captura Avanzada:</strong> <em>ProCam 8</em> (iOS) o <em>Open Camera</em> (Android) para forzar enfoque al infinito, bloquear el ISO y desactivar la reducción automática de ruido por software.</li>
+            </ul>
+        </li>
+        <li><strong>Hardware Óptico y Acústico:</strong> Linternas frontales con emisor LED rojo nativo (620nm), trípodes estables con cabezal fluido y grabadoras de audio dedicadas (ej. Zoom H1n) configuradas en formato WAV a 24-bit/96kHz.</li>
+    </ul>
+
+    <h2>2. Protocolo de Registro Tecnológico Cuantitativo</h2>
+    <ul>
+        <li><strong>Captura Óptica:</strong> Uso de cámaras con sensores de alta sensibilidad (ISO elevado), lentes de apertura rápida (f/1.8 - f/2.8) y enfoque manual al infinito.</li>
+        <li><strong>Referencia Terrestre:</strong> Mantener siempre un objeto fijo (árboles, siluetas de montañas, postes) en el encuadre para validar el movimiento real frente al movimiento de la cámara.</li>
+        <li><strong>Telemetría Básica:</strong> Anotación inmediata de la hora exacta (UTC/Local), coordenadas GPS, azimut (dirección de la brújula) y ángulo de elevación estimado sobre el horizonte.</li>
+        <li><strong>Monitoreo Acústico:</strong> Empleo de micrófonos direccionales o grabadoras portátiles para auditar el espectro sonoro ambiental y certificar la ausencia de ruido.</li>
+    </ul>
+
+    <h2>3. Matriz de Diagnóstico y Descarte de Fenómenos Convencionales</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Fenómeno Probable</th>
+                <th>Patrón de Desplazamiento</th>
+                <th>Causa de la Ausencia de Sonido</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Drones Civiles / FPV</strong></td>
+                <td>Cambios de ángulo cerrado, vuelo estacionario y aceleración súbita.</td>
+                <td>Los motores eléctricos modernos son inaudibles a distancias superiores a 150-200 metros.</td>
+            </tr>
+            <tr>
+                <td><strong>Satélites (Starlink / ISS)</strong></td>
+                <td>Trayectoria rectilínea perfecta, velocidad constante de horizonte a horizonte.</td>
+                <td>Órbita baja en el vacío espacial, fuera de la atmósfera terrestre.</td>
+            </tr>
+            <tr>
+                <td><strong>Reflejos / Focos Terrestres</strong></td>
+                <td>Movimientos erráticos condicionados por el relieve o nubes bajas.</td>
+                <td>La fuente de emisión (linterna táctica o faro) está lejos del punto de observación.</td>
+            </tr>
+            <tr>
+                <td><strong>Fauna Nocturna (Aves)</strong></td>
+                <td>Desplazamientos sinuosos influenciados por las corrientes de viento.</td>
+                <td>Plumaje adaptado para vuelo silencioso (búhos) que refleja la contaminación lumínica lejana.</td>
+            </tr>
+            <tr>
+                <td><strong>Gases / Plasmas Terrestres</strong></td>
+                <td>Estaticidad aparente, titileo intermitente y desaparición súbita.</td>
+                <td>Combustión de metano (fuegos fatuos) o descargas piezoeléctricas sin onda de choque acústica.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>4. Gráfico de Coordenadas de Avistamiento (Azimut y Elevación)</h2>
+    <p>Utilice esta cuadrícula técnica para trazar el punto de origen (A), la trayectoria irregular detectada y el punto de pérdida visual (B).</p>
+    
+    <div class="chart-container">
+        <svg width="500" height="300" viewBox="0 0 500 300" style="background-color: #0f172a;">
+            <!-- Líneas de cuadrícula -->
+            <line x1="50" y1="250" x2="450" y2="250" stroke="#334155" stroke-width="2"/>
+            <line x1="50" y1="50" x2="50" y2="250" stroke="#334155" stroke-width="2"/>
+            
+            <line x1="150" y1="50" x2="150" y2="250" stroke="#1e293b" stroke-dasharray="5,5"/>
+            <line x1="250" y1="50" x2="250" y2="250" stroke="#1e293b" stroke-dasharray="5,5"/>
+            <line x1="350" y1="50" x2="350" y2="250" stroke="#1e293b" stroke-dasharray="5,5"/>
+            <line x1="450" y1="50" x2="450" y2="250" stroke="#1e293b" stroke-dasharray="5,5"/>
+            
+            <line x1="50" y1="183" x2="450" y2="183" stroke="#1e293b" stroke-dasharray="5,5"/>
+            <line x1="50" y1="116" x2="450" y2="116" stroke="#1e293b" stroke-dasharray="5,5"/>
+            <line x1="50" y1="50" x2="450" y2="50" stroke="#1e293b" stroke-dasharray="5,5"/>
+
+            <!-- Etiquetas de ejes -->
+            <text x="250" y="285" fill="#64748b" font-size="12" text-anchor="middle">AZIMUT (Puntos Cardinales / Norte 0° - 360°)</text>
+            <text x="18" y="150" fill="#64748b" font-size="12" text-anchor="middle" transform="rotate(-90 18 150)">ELEVACIÓN (0° - 90°)</text>
+            
+            <!-- Valores referenciales de los ejes -->
+            <text x="50" y="265" fill="#475569" font-size="10" text-anchor="middle">0° (N)</text>
+            <text x="150" y="265" fill="#475569" font-size="10" text-anchor="middle">90° (E)</text>
+            <text x="250" y="265" fill="#475569" font-size="10" text-anchor="middle">180° (S)</text>
+            <text x="350" y="265" fill="#475569" font-size="10" text-anchor="middle">270° (O)</text>
+            <text x="450" y="265" fill="#475569" font-size="10" text-anchor="middle">360° (N)</text>
+
+            <text x="40" y="253" fill="#475569" font-size="10" text-anchor="end">0°</text>
+            <text x="40" y="186" fill="#475569" font-size="10" text-anchor="end">30°</text>
+            <text x="40" y="120" fill="#475569" font-size="10" text-anchor="end">60°</text>
+            <text x="40" y="53" fill="#475569" font-size="10" text-anchor="end">90°</text>
+
+            <!-- Simulación de trazo irregular -->
+            <path d="M 120 200 Q 180 80 260 140 T 400 70" fill="none" stroke="#f43f5e" stroke-width="2" stroke-dasharray="4,2"/>
+            <circle cx="120" cy="200" r="4" fill="#38bdf8"/>

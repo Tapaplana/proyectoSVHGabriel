@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="..\imagenes/favicon/favicon-32x32.png" rel="icon" type="image">
+    <title>Tecnologías de Detección Astronómica</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #161f30;
+            --text-color: #e2e8f0;
+            --accent-color: #38bdf8;
+            --highlight: #f59e0b;
+            --subtle-text: #94a3b8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 0;
+            border-bottom: 2px solid #2d3748;
+        }
+
+        h1 {
+            color: var(--accent-color);
+            margin-bottom: 10px;
+            font-size: 2.3rem;
+        }
+
+        .subtitle {
+            color: var(--subtle-text);
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        section {
+            background-color: var(--card-bg);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 1px solid #2d3748;
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .tech-card {
+            margin-bottom: 25px;
+        }
+
+        .tech-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .tech-title {
+            color: var(--highlight);
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 5px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #2d3748;
+        }
+
+        th {
+            background-color: #1e293b;
+            color: var(--accent-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #64748b;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>Tecnologías de Detección Astronómica</h1>
+        <p class="subtitle">Radiotelescopios, interferometría y sensores de alta precisión para explorar los misterios del espacio profundo.</p>
+    </header>
+
+    <section>
+        <h2>Principales Herramientas de Observación</h2>
+
+        <div class="tech-card">
+            <div class="tech-title">1. Radiotelescopios</div>
+            <p>Captan ondas de radio emitidas por objetos celestes en lugar de luz visible.</p>
+            <ul>
+                <li><strong>Función principal:</strong> Detectar radiación electromagnética capaces de atravesar nubes de polvo y gas denso.</li>
+                <li><strong>Aplicaciones clave:</strong> Estudio de magnetares, púlsares, galaxias lejanas y fenómenos como FRBs o la Señal <em>Wow!</em>.</li>
+                <li><strong>Ejemplos destacados:</strong> Observatorio FAST en China y el histórico telescopio de Arecibo.</li>
+            </ul>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-title">2. Interferometría</div>
+            <p>Combina las señales de múltiples antenas o telescopios separados físicamente para funcionar como un único instrumento de proporciones gigantescas.</p>
+            <ul>
+                <li><strong>Función principal:</strong> Superar los límites de resolución óptica obteniendo la capacidad equivalente a un telescopio del tamaño de la separación entre sus antenas.</li>
+                <li><strong>Interferometría de Muy Larga Base (VLBI):</strong> Conecta antenas a escala global o espacial.</li>
+                <li><strong>Hitos:</strong> Permitió al <em>Event Horizon Telescope</em> (EHT) capturar las primeras imágenes históricas de agujeros negros (M87* y Sagitario A*).</li>
+                <li><strong>Ejemplos destacados:</strong> ALMA en Chile y Very Large Array (VLA) en EE. UU.</li>
+            </ul>
+        </div>
+
+        <div class="tech-card">
+            <div class="tech-title">3. Sensores de Alta Precisión</div>
+            <p>Detectores electrónicos de máxima sensibilidad instalados en los observatorios para registrar partículas o fotones con extrema exactitud.</p>
+            <ul>
+                <li><strong>Detectores CCD y CMOS astronómicos:</strong> Dispositivos de altísima eficiencia cuántica para capturar fuentes de luz sumamente débiles.</li>
+                <li><strong>Espectrógrafos de Alta Resolución:</strong> Descomponen la luz para analizar la composición de atmósferas exoplanetarias y medir velocidades radiales.</li>
+                <li><strong>Detectores Gravitacionales (LIGO / Virgo):</strong> Interferómetros láser que miden distorsiones diminutas en el espacio-tiempo causadas por colisiones cósmicas.</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <section>
+        <h2>Comparativa de Tecnologías</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tecnología</th>
+                    <th>Principio de Funcionamiento</th>
+                    <th>Principal Ventaja</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Radiotelescopios</strong></td>
+                    <td>Captura de ondas de baja frecuencia</td>
+                    <td>Atraviesan el polvo cósmico para revelar el universo frío.</td>
+                </tr>
+                <tr>
+                    <td><strong>Interferometría</strong></td>
+                    <td>Combinación de señales de varias antenas</td>
+                    <td>Logra resoluciones angulares extremadamente altas.</td>
+                </tr>
+                <tr>
+                    <td><strong>Sensores de Alta Precisión</strong></td>
+                    <td>Medición fina de fotones, espectro u ondas</td>
+                    <td>Detectan variaciones imperceptibles en luz, masa o espacio-tiempo.</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <footer>
+        <p>Página informativa sobre instrumentos de detección astronómica y astrofísica moderna</p>
+    </footer>
+
+</div>
+
+</body>
+</html>

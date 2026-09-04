@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="..\imagenes/favicon/favicon-32x32.png" rel="icon" type="image">
+    <title>Exoplanetas Habitables</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #161f30;
+            --text-color: #e2e8f0;
+            --accent-color: #38bdf8;
+            --accent-hover: #0ea5e9;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(180deg, #020617 0%, var(--bg-color) 100%);
+            text-align: center;
+            padding: 3rem 1rem;
+        }
+
+        header h1 {
+            color: var(--accent-color);
+            font-size: 2.5rem;
+            margin: 0 0 1rem 0;
+        }
+
+        header p {
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: #94a3b8;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        h2 {
+            color: var(--accent-color);
+            border-bottom: 2px solid var(--card-bg);
+            padding-bottom: 0.5rem;
+            margin-top: 2rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border: 1px solid #1e293b;
+            transition: transform 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+        }
+
+        .card h3 {
+            color: #fff;
+            margin-top: 0;
+            font-size: 1.3rem;
+        }
+
+        .criterios-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .criterios-list li {
+            background-color: var(--card-bg);
+            margin-bottom: 0.75rem;
+            padding: 1rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--accent-color);
+        }
+
+        .criterios-list strong {
+            color: #fff;
+        }
+
+        .info-box {
+            background: linear-gradient(135deg, #1e1b4b 0%, #311042 100%);
+            border: 1px solid #4338ca;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .info-box h3 {
+            color: #f472b6;
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid var(--card-bg);
+            margin-top: 3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Exoplanetas Habitables</h1>
+        <p>Mundos distantes situados en la zona habitable de sus estrellas, capaces de albergar agua líquida en su superficie y potencialmente vida.</p>
+    </header>
+
+    <div class="container">
+        
+        <h2>Los Candidatos más Prometedores</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Próxima Centauri b</h3>
+                <p>El exoplaneta potencialmente habitable más cercano a nosotros, a solo 4,2 años luz. Orbita una enana roja y es ligeramente más masivo que la Tierra.</p>
+            </div>
+            <div class="card">
+                <h3>LHS 1140b</h3>
+                <p>A 48 años luz, destaca por conservar una atmósfera rica en helio. Los científicos sugieren que es un mundo híbrido entre oceánico y helado.</p>
+            </div>
+            <div class="card">
+                <h3>Sistema TRAPPIST-1</h3>
+                <p>Un sistema único a 40 años luz con cuatro planetas en zona habitable (destacando TRAPPIST-1e). Objetivo clave para buscar biofirmas químicas.</p>
+            </div>
+            <div class="card">
+                <h3>Gliese 12 b</h3>
+                <p>Descubierto a 40 años luz. Con un tamaño intermedio entre Venus y la Tierra, es ideal para estudiar la evolución de atmósferas templadas.</p>
+            </div>
+            <div class="card">
+                <h3>Kepler-452b</h3>
+                <p>El "primo mayor de la Tierra". Orbita una estrella similar al Sol a 1.400 años luz y su año dura 385 días.</p>
+            </div>
+        </div>
+
+        <h2>Criterios Clave de Habitabilidad</h2>
+        <ul class="criterios-list">
+            <li><strong>Zona Ricitos de Oro:</strong> Ubicación orbital exacta para que las temperaturas permitan el agua líquida (ni muy caliente ni muy frío).</li>
+            <li><strong>Composición Rocosa:</strong> Superficie sólida y masa similar a la Tierra para evitar convertirse en gigantes gaseosos inóspitos.</li>
+            <li><strong>Escudo Atmosférico:</strong> Gravedad suficiente para retener gases protectores contra la letal radiación de su estrella.</li>
+        </ul>
+
+        <div class="info-box">
+            <h3>El Gran Reto Tecnológico</h3>
+            <p>Detectar estos mundos es complejo porque sus estrellas brillan 10.000 millones de veces más que ellos. Para solucionarlo, astrofísicos desarrollan tecnologías avanzadas como el sistema fotónico PEEPSS, diseñado para corregir las fugas de luz en futuros observatorios y analizar directamente sus atmósferas.</p>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>Datos recopilados según el catálogo del Planetary Habitability Laboratory (PHL).</p>
+    </footer>
+
+</body>
+</html>

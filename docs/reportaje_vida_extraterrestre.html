@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="..\imagenes/favicon/favicon-32x32.png" rel="icon" type="image">
+    <title>Reportaje National Geographic: Vida Extraterrestre</title>
+    <style>
+        :root {
+            --primary: #111827;
+            --accent: #f59e0b;
+            --accent-light: #fef3c7;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #334155;
+            --text-dark: #0f172a;
+            --border: #e2e8f0;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background-color: var(--bg);
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            border-radius: 12px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            overflow: hidden;
+        }
+
+        header {
+            background-color: var(--primary);
+            color: #ffffff;
+            padding: 40px 30px;
+            border-bottom: 5px solid var(--accent);
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--accent);
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 0.85rem;
+            padding: 4px 12px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            line-height: 1.2;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .meta-info {
+            font-size: 0.95rem;
+            color: #9ca3af;
+        }
+
+        main {
+            padding: 30px;
+        }
+
+        section {
+            margin-bottom: 35px;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: var(--text-dark);
+            border-left: 4px solid var(--accent);
+            padding-left: 12px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .highlight-box {
+            background-color: var(--accent-light);
+            border: 1px solid #fcd34d;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .highlight-box h3 {
+            color: #92400e;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .card {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+
+        .card h3 {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.2rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        footer {
+            background-color: #f1f5f9;
+            padding: 20px 30px;
+            border-top: 1px solid var(--border);
+            font-size: 0.9rem;
+            color: #64748b;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <span class="badge">National Geographic</span>
+        <h1>«No Estamos Solos»: El cambio de paradigma en la búsqueda de vida extraterrestre</h1>
+        <div class="meta-info">Resumen de publicación | Edición: Marzo de 2019 (Págs. 2-35)</div>
+    </header>
+
+    <main>
+        <section>
+            <h2>Un Hito Histórico en la Ciencia Oficial</h2>
+            <p>El reportaje publicado por <em>National Geographic</em> no anuncia el descubrimiento oficial de vida alienígena, sino una transformación profunda en el enfoque científico de las principales agencias espaciales como la NASA.</p>
+            
+            <div class="highlight-box">
+                <h3>El Cambio de Paradigma</h3>
+                <p style="margin-bottom: 0;">La comunidad científica ha dejado de preguntarse si existe vida fuera de la Tierra (dando por casi seguro que la hay) para centrarse en una nueva cuestión clave: <strong>«¿Cómo damos con ella?»</strong>.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Instrumentos y Proyectos Tecnológicos</h2>
+            <p>Para abordar este desafío, se han puesto en marcha diversos proyectos destinados al estudio de exoplanetas y sus atmósferas:</p>
+            
+            <div class="grid">
+                <div class="card">
+                    <h3>Telescopio Espacial James Webb</h3>
+                    <p>Proyecto para la observación profunda del espacio y análisis atmosférico exoplanetario.</p>
+                </div>
+                <div class="card">
+                    <h3>SCExAO</h3>
+                    <p>Óptica Adaptativa Extrema Coronográfica del Subaru. Cuenta con 2.000 motores microscópicos que se deforman 3.000 veces por segundo para anular el titileo atmosférico y bloquear la luz estelar.</p>
+                </div>
+                <div class="card">
+                    <h3>Starshade</h3>
+                    <p>Instrumento espacial con forma de flor diseñado para bloquear la luz de las estrellas, permitiendo detectar planetas extrasolares junto al Telescopio de Rastreo Infrarrojo de Gran Campo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Proyectos Osados y Búsqueda de Tecnofirmas</h2>
+            <p>La ciencia ya no solo busca formas microscópicas de vida, sino también evidencia de civilizaciones con millones de años de desarrollo tecnológico superior:</p>
+            <ul>
+                <li><strong>Seth Shostak (Instituto SETI):</strong> Defiende buscar activamente pruebas de tecnología (tecnofirmas) en lugar de esperar pasivamente a recibir una señal.</li>
+                <li><strong>Avi Loeb (Breakthrough Starshot):</strong> Propone rastrear firmas espectrales de contaminantes como clorofluorocarbonos en atmósferas alienígenas.</li>
+                <li><strong>Megaestructuras:</strong> Detección del calor residual emitido por estructuras hipotéticas como las Esferas de Dyson.</li>
+                <li><strong>Breakthrough Starshot:</strong> Iniciativa respaldada en su origen por Stephen Hawking para enviar micro-sondas impulsadas por láser hacia Próxima Centauri b.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>Fuente original: <em>No Estamos Solos</em>, National Geographic Magazine, Marzo 2019, págs. 2-35.</p>
+    </footer>
+</div>
+
+</body>
+</html>

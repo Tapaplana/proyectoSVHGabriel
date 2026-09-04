@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="..\imagenes/favicon/favicon-32x32.png" rel="icon" type="image">
+    <title>Informe Analítico — Interpretaciones Psicológicas y Sesgos Cognitivos</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --panel-bg: #1e293b;
+            --panel-border: #334155;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent-pink: #ec4899;
+            --accent-purple: #a855f7;
+            --accent-cyan: #06b6d4;
+            --accent-amber: #f59e0b;
+            --font-mono: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', Consolas, monospace;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            border-bottom: 2px solid var(--panel-border);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .header-title h1 {
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .header-title p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .badge {
+            background-color: rgba(236, 72, 153, 0.15);
+            color: var(--accent-pink);
+            border: 1px solid var(--accent-pink);
+            padding: 0.35rem 0.75rem;
+            font-size: 0.75rem;
+            font-family: var(--font-mono);
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .callout {
+            background-color: rgba(236, 72, 153, 0.05);
+            border: 1px solid rgba(236, 72, 153, 0.2);
+            border-left: 4px solid var(--accent-pink);
+            padding: 1.25rem;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .callout-title {
+            font-weight: bold;
+            color: var(--accent-pink);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background-color: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .card h2 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--panel-border);
+            padding-bottom: 0.5rem;
+        }
+
+        .card h2::before {
+            content: "🧠";
+            font-size: 0.9rem;
+        }
+
+        .concept-item {
+            margin-bottom: 1.25rem;
+        }
+
+        .concept-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .concept-item h3 {
+            font-size: 1rem;
+            color: var(--accent-cyan);
+            margin-bottom: 0.3rem;
+        }
+
+        .concept-item p {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        .concept-item ul {
+            list-style: none;
+            margin-top: 0.4rem;
+        }
+
+        .concept-item li {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            padding-left: 1rem;
+            position: relative;
+            margin-bottom: 0.2rem;
+        }
+
+        .concept-item li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-pink);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--panel-border);
+        }
+
+        th {
+            background-color: rgba(255, 255, 255, 0.02);
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-family: var(--font-mono);
+        }
+
+        .tag-pink {
+            background-color: rgba(236, 72, 153, 0.15);
+            color: var(--accent-pink);
+            border: 1px solid var(--accent-pink);
+        }
+
+        .tag-purple {
+            background-color: rgba(168, 85, 247, 0.15);
+            color: var(--accent-purple);
+            border: 1px solid var(--accent-purple);
+        }
+
+        .tag-amber {
+            background-color: rgba(245, 158, 11, 0.15);
+            color: var(--accent-amber);
+            border: 1px solid var(--accent-amber);
+        }
+
+        .eval-box {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--panel-border);
+            border-radius: 4px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .eval-box h3 {
+            font-size: 0.95rem;
+            color: var(--accent-amber);
+            margin-bottom: 0.4rem;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--panel-border);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="header-title">
+                <h1>Interpretaciones Psicológicas y Perceptivas</h1>
+                <p>Modelos de Ciencias Cognitivas y Neuropsicología Aplicados al Análisis FANI</p>
+            </div>
+            <span class="badge">EVALUACIÓN PSICOCOGNITIVA</span>
+        </header>
+
+        <div class="callout">
+            <div class="callout-title">Resumen Técnico</div>
+            <p>Los <strong>modelos psicológicos y perceptivos</strong> explican una parte fundamental de los testimonios de Fenómenos Anómalos No Identificados (FANI/UAP). Sostienen que la arquitectura del sistema visual y cognitivo humano está optimizada para la supervivencia y el reconocimiento de patrones familiares, lo que genera distorsiones perceptivas sistemáticas ante estímulos ambiguos o inusuales.</p>
+        </div>
+
+        <section class="grid">
+            <div class="card" style="grid-column: span 2;">
+                <h2>Procesos Cognitivos y Mecanismos de Percepción</h2>
+
+                <div class="concept-item">
+                    <h3>1. Pareidolia y Apofenia</h3>
+                    <p>Tendencia neurológica a organizar estímulos visuales o auditivos vagos en patrones definidos y reconocibles (como rostros, geometrías o estructuras mecánicas).</p>
+                    <ul>
+                        <li><strong>Impacto FANI:</strong> Interpretación de formaciones nubosas, reflectividad de satélites (p. ej., Starlink) o destellos astronómicos como naves estructuradas o luces de vuelo en formación.</li>
+                    </ul>
+                </div>
+
+                <div class="concept-item">
+                    <h3>2. Errores de Estimación Espacial y Autocinesis Visual</h3>
+                    <p>La incapacidad del ojo humano para calcular el tamaño, distancia o velocidad real de un objeto puntual en un cielo despejado o nocturno sin puntos de referencia visuales.</p>
+                    <ul>
+                        <li><strong>Efecto Autocinético:</strong> Un punto luminoso estático (como Venus o una estrella brillante) parece moverse en trayectorias erráticas debido a micro-movimientos involuntarios del ojo (fijación ocular).</li>
+                        <li><strong>Ilusión Paralaje:</strong> Un objeto cercano a baja velocidad (un dron o un globo) parece moverse a velocidades hipersónicas cuando el observador está en movimiento (piloto en vuelo).</li>
+                    </ul>
+                </div>
+
+                <div class="concept-item">
+                    <h3>3. Sesgos de Confirmación y Primado Sociocultural (Priming)</h3>
+                    <p>Modelado del procesamiento "de arriba a abajo" (*Top-Down Processing*), donde la expectativa consciente y la narrativa mediática previa determinan la interpretación inmediata del estímulo visual.</p>
+                    <ul>
+                        <li><strong>Contagios Sociales:</strong> Períodos de alta cobertura mediática sobre el tema aumentan exponencialmente la notificación de avistamientos cotidianos redefinidos retrospectivamente como "anómalos".</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="card" style="margin-bottom: 2rem;">
+            <h2>Matriz de Factores Psicológicos y Fenómenos Asociados</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Mecanismo Psicológico</th>
+                        <th>Base Neurobiológica / Cognitiva</th>
+                        <th>Ilusión Generada</th>
+                        <th>Nivel de Incidencia</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Pareidolia</strong></td>
+                        <td>Procesamiento en la área fusiforme de rostros / Corteza visual superior</td>
+                        <td>Interpretación de estructuras sólidas en manchas de luz, sombras o nubes.</td>
+                        <td><span class="tag tag-pink">MUY ALTO</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Efecto Autocinético</strong></td>
+                        <td>Inestabilidad de fijación foveal en entornos sin contraste / fondo nulo</td>
+                        <td>Sensación de que una luz estática realiza aceleraciones o giros bruscos.</td>
+                        <td><span class="tag tag-purple">ALTO</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Parálisis del Sueño / Hipnagogia</strong></td>
+                        <td>Disociación de la fase REM durante el tránsito vigilia-sueño</td>
+                        <td>Experiencias de presencias en la habitación, inmovilidad y visiones "entidad/NHI".</td>
+                        <td><span class="tag tag-amber">ESPECÍFICO</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Sesgo de Expectativa</strong></td>
+                        <td>Procesamiento Top-Down de atajos heurísticos en toma de decisiones rápidas</td>
+                        <td>Confusión de objetos convencionales (globos, aves) con tecnología no humana.</td>
+                        <td><span class="tag tag-pink">MUY ALTO</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>El Rol del Factor Humano en Informes Oficiales</h2>
+
+            <div class="eval-box">
+                <h3>Limitación del Testimonio Ocular (*Eye-Witness Vulnerability*)</h3>
+                <p>Diversos estudios académicos y evaluaciones de la NASA señalan que la memoria testimonial humana no funciona como un registro de video, sino como un proceso de reconstrucción propenso a la distorsión, la sugestión y el sesgo de reestructuración posterior (*hindsight bias*).</p>
+            </div>
+
+            <div class="eval-box">
+                <h3>Necesidad de Métricas Sensoriales Calibradas</h3>
+                <p>Es por ello que las agencias analíticas (como AARO) otorgan un valor secundario al testimonio visual puro, priorizando la correlación de datos duros provenientes de radares primarios, sensores Infrarrojos de Mirada Frontal (FLIR) y datos de telemetría de vuelo.</p>
+            </div>
+        </section>
+
+        <footer>
+            DOCUMENTO TÉCNICO DE REFERENCIA — INTERPRETACIONES PSICOLÓGICAS Y SESGOS COGNITIVOS (PSI-v1)
+        </footer>
+    </div>
+
+</body>
+</html>

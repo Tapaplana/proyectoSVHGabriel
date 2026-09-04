@@ -1,0 +1,71 @@
+/* HOME */
+#home {
+  background: radial-gradient(circle at top, #111 0%, #000 70%);
+  background-image: url('fondo_home_estrellas.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* AVISTAMIENTOS */
+#avistamientos {
+  background-color: #000;
+  background-image: url('fondo_avistamientos_mapa.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #ccc;
+}
+
+/* DOCUMENTOS OFICIALES */
+#documentos {
+  background-color: #0a0a0a;
+  background-image: linear-gradient(180deg, #111 0%, #000 100%), url('fondo_metal_cepillado.png');
+  background-blend-mode: overlay;
+  background-size: cover;
+}
+
+/* CIENCIA Y ASTRONOMÍA */
+#ciencia {
+  background: radial-gradient(circle at center, #001020 0%, #000 80%);
+  background-image: url('fondo_nebulosa.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* TEORÍAS Y ESPECULACIONES */
+#teorias {
+  background-color: #000;
+  background-image: url('fondo_hexagonal.png');
+  background-size: 600px;
+  background-repeat: repeat;
+  background-blend-mode: overlay;
+}
+
+/* INVESTIGACIÓN PROPIA */
+#investigacion {
+  background-color: #000;
+  background-image: url('fondo_vision_nocturna.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #ccc;
+}
+
+/* SOBRE EL PROYECTO */
+#sobre {
+  background-color: #000;
+  background-image: radial-gradient(circle at center, #111 0%, #000 80%);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* CONTACTO */
+#contacto {
+  background-color: #000;
+  background-image: url('fondo_formulario.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

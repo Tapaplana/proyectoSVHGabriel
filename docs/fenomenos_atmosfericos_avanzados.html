@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="..\imagenes/favicon/favicon-32x32.png" rel="icon" type="image">
+    <title>Informe Técnico — Fenómenos Atmosféricos Avanzados</title>
+    <style>
+        :root {
+            --bg-color: #0c1017;
+            --panel-bg: #141b26;
+            --panel-border: #253346;
+            --text-primary: #dbe4ee;
+            --text-secondary: #8fa0b5;
+            --accent-teal: #14b8a6;
+            --accent-sky: #0284c7;
+            --accent-amber: #f59e0b;
+            --accent-indigo: #6366f1;
+            --font-mono: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', Consolas, monospace;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-sans);
+            line-height: 1.6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            border-bottom: 2px solid var(--panel-border);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .header-title h1 {
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            color: #fff;
+            text-transform: uppercase;
+        }
+
+        .header-title p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .badge {
+            background-color: rgba(20, 184, 166, 0.15);
+            color: var(--accent-teal);
+            border: 1px solid var(--accent-teal);
+            padding: 0.35rem 0.75rem;
+            font-size: 0.75rem;
+            font-family: var(--font-mono);
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .callout {
+            background-color: rgba(20, 184, 166, 0.05);
+            border: 1px solid rgba(20, 184, 166, 0.2);
+            border-left: 4px solid var(--accent-teal);
+            padding: 1.25rem;
+            border-radius: 4px;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .callout-title {
+            font-weight: bold;
+            color: var(--accent-teal);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .card {
+            background-color: var(--panel-bg);
+            border: 1px solid var(--panel-border);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .card h2 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 1px solid var(--panel-border);
+            padding-bottom: 0.5rem;
+        }
+
+        .card h2::before {
+            content: "⚡";
+            font-size: 0.9rem;
+        }
+
+        .mechanism-item {
+            margin-bottom: 1.25rem;
+        }
+
+        .mechanism-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .mechanism-item h3 {
+            font-size: 1rem;
+            color: var(--accent-sky);
+            margin-bottom: 0.3rem;
+        }
+
+        .mechanism-item p {
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        .mechanism-item ul {
+            list-style: none;
+            margin-top: 0.4rem;
+        }
+
+        .mechanism-item li {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            padding-left: 1rem;
+            position: relative;
+            margin-bottom: 0.2rem;
+        }
+
+        .mechanism-item li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-teal);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            padding: 0.75rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--panel-border);
+        }
+
+        th {
+            background-color: rgba(255, 255, 255, 0.02);
+            color: var(--text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 0.5px;
+        }
+
+        tr:hover {
+            background-color: rgba(255, 255, 255, 0.02);
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.15rem 0.4rem;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            font-family: var(--font-mono);
+        }
+
+        .tag-teal {
+            background-color: rgba(20, 184, 166, 0.15);
+            color: var(--accent-teal);
+            border: 1px solid var(--accent-teal);
+        }
+
+        .tag-indigo {
+            background-color: rgba(99, 102, 241, 0.15);
+            color: var(--accent-indigo);
+            border: 1px solid var(--accent-indigo);
+        }
+
+        .tag-amber {
+            background-color: rgba(245, 158, 11, 0.15);
+            color: var(--accent-amber);
+            border: 1px solid var(--accent-amber);
+        }
+
+        .impact-box {
+            background-color: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--panel-border);
+            border-radius: 4px;
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .impact-box h3 {
+            font-size: 0.95rem;
+            color: var(--accent-amber);
+            margin-bottom: 0.4rem;
+        }
+
+        footer {
+            margin-top: 3rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--panel-border);
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+            font-family: var(--font-mono);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <div class="header-title">
+                <h1>Fenómenos Atmosféricos Avanzados</h1>
+                <p>Análisis Físico de Plasmas, Eventos Electrodinámicos y Optica Atmosférica en Evaluaciones FANI</p>
+            </div>
+            <span class="badge">EVALUACIÓN FÍSICO-ATMOSFÉRICA</span>
+        </header>
+
+        <div class="callout">
+            <div class="callout-title">Resumen Técnico</div>
+            <p>Los <strong>fenómenos atmosféricos avanzados y poco comunes</strong> representan una de las hipótesis explicativas primarias en el estudio de Fenómenos Anómalos No Identificados (FANI/UAP). Se apoyan en la física del plasma, la electrodinámica de la alta atmósfera y la refracción de luz por gradientes térmicos extremos.</p>
+        </div>
+
+        <section class="grid">
+            <div class="card" style="grid-column: span 2;">
+                <h2>Principales Mecanismos Físicos</h2>
+
+                <div class="mechanism-item">
+                    <h3>1. Rayo en Bola (Ball Lightning)</h3>
+                    <p>Esferas luminosas de plasma energizado formadas durante tormentas eléctricas.</p>
+                    <ul>
+                        <li><strong>Comportamiento Anómalo:</strong> Movimiento errático, flotación, capacidad de atravesar estructuras o cristales y desaparición súbita.</li>
+                        <li><strong>Firma Sensorial:</strong> Emisión luminosa propia e ionización del aire que genera reflexión o distorsión en señales de radar primario.</li>
+                    </ul>
+                </div>
+
+                <div class="mechanism-item">
+                    <h3>2. Eventos Luminosos Transitorios (TLEs: Sprites, Jets, Elves)</h3>
+                    <p>Descargas eléctricas de plasma frío en la mesosfera y estratosfera (20 km - 100 km de altitud).</p>
+                    <ul>
+                        <li><strong>Comportamiento Anómalo:</strong> Destellos ultra rápidos (milisegundos) de color rojo/azul con geometrías complejas (columnas, medusas). Su escala masiva puede imitar maniobras a alta velocidad.</li>
+                    </ul>
+                </div>
+
+                <div class="mechanism-item">
+                    <h3>3. Refracción Atmosférica y Espejismos Térmicos (Fata Morgana)</h3>
+                    <p>Inversiones térmicas severas donde capas de aire de distinta densidad actúan como conductos y lentes (*ducts*).</p>
+                    <ul>
+                        <li><strong>Comportamiento Anómalo:</strong> Proyección lejana de barcos, luces continentales o aeronaves en el cielo, creando la ilusión de objetos flotantes, aceleraciones imposibles o metamorfosis visual.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="card" style="margin-bottom: 2rem;">
+            <h2>Matriz Comparativa de Fenómenos Atmosféricos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fenómeno</th>
+                        <th>Origen Físico</th>
+                        <th>Duración Típica</th>
+                        <th>Firma de Radar / Sensores</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Rayo en Bola</strong></td>
+                        <td>Plasma de silicio / Aire ionizado</td>
+                        <td>Segundos a minutos</td>
+                        <td><span class="tag tag-teal">Variable (Reflexión por Ionización)</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Blue Jets / Sprites</strong></td>
+                        <td>Descargas en alta atmósfera (Mesosfera)</td>
+                        <td>Milisegundos</td>
+                        <td><span class="tag tag-indigo">Nula o Imperceptible</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Plasmas de Inversión</strong></td>
+                        <td>Piezoluminiscencia / Carga geofísica</td>
+                        <td>Segundos a minutos</td>
+                        <td><span class="tag tag-amber">Falso Positivo por Densidad</span></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Fata Morgana</strong></td>
+                        <td>Refracción óptica por gradiente térmico</td>
+                        <td>Horas</td>
+                        <td><span class="tag tag-amber">Falso Blanco por Ducting</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section class="card">
+            <h2>Implicaciones en el Análisis de Sensores (AARO / NASA)</h2>
+
+            <div class="impact-box">
+                <h3>Interferencia Electromagnética y Electrónica</h3>
+                <p>Las bolsas de plasma ionizado en la atmósfera generan campos electromagnéticos capaces de causar interferencia en sistemas de navegación militar y comercial, imitando la firma de interferencia atribuida a un objeto sólido.</p>
+            </div>
+
+            <div class="impact-box">
+                <h3>Efecto de Conducto de Radar (Radar Ducting)</h3>
+                <p>Las inversiones térmicas atmosféricas curvan las ondas del radar primario hacia la superficie o capas lejanas, proyectando "objetos fantasma" en las pantallas del operador que parecen moverse a velocidades imposibles cuando son ecos reflejados del terreno o el mar.</p>
+            </div>
+        </section>
+
+        <footer>
+            DOCUMENTO TÉCNICO DE REFERENCIA — FENÓMENOS ATMOSFÉRICOS AVANZADOS (FAA-v1)
+        </footer>
+    </div>
+
+</body>
+</html>

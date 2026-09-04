@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<link href="imagenes/favicon/favicon-32x32.png" rel="icon" type="image">
+	<link rel="stylesheet" type="text/css" href="style.css" title="Contacto">
+    <title>Ecos del Universo - Contacto</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body class="dark-theme">
+
+  <!-- HEADER GLOBAL -->
+ <header class="header">
+  <a href="#" class="logo"></a>
+  <a href="contacto.html">
+    <img src="imagenes/logos/logo7.png" alt="Ecos del Universo" class="logo-img">
+  </a>
+
+  <input type="checkbox" id="menu-toggle" class="menu-toggle">
+  <label for="menu-toggle" class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
+
+  <nav class="nav-mobile">
+    <ul>
+      <li><a href="index.html">Inicio</a></li>
+      <li><a href="avistamientos.html">Avistamientos</a></li>
+      <li><a href="documentos.html">Documentos</a></li>
+      <li><a href="ciencia.html">Ciencia</a></li>
+      <li><a href="teorias.html">Teorías</a></li>
+      <li><a href="investigacion.html">Investigación</a></li>
+      <li><a href="sobre.html">Sobre</a></li>
+      <li class="active"><a href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <div class="header-container">
+    <nav class="nav">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="avistamientos.html">Avistamientos</a></li>
+        <li><a href="documentos.html">Documentos</a></li>
+        <li><a href="ciencia.html">Ciencia</a></li>
+        <li><a href="teorias.html">Teorías</a></li>
+        <li><a href="investigacion.html">Investigación</a></li>
+        <li><a href="sobre.html">Sobre</a></li>
+        <li class="active"><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+	<div class="fondo-ct">
+		<div class="pagina-titulo">
+			<h1>Contacto</h1>
+			<p>Envíame tus testimonios, preguntas o colaboraciones.</p>
+		</div>
+	</div></br>
+
+    <div class="contact-container">
+      <div class="contact-info">
+        <h2>¿Quieres compartir un avistamiento?</h2>
+        <p>
+          Si has presenciado un fenómeno extraño, tienes material fotográfico o deseas colaborar en una investigación.
+        </p>
+      </div>
+
+      <form class="contact-form" action="https://formsubmit.co/garome@garome.site" method="POST" onsubmit="event.preventDefault(); alert('¡Mensaje enviado con éxito!');">
+        <label>Nombre</label>
+        <input type="text" class="contact-input" placeholder="Tu nombre" required>
+
+        <label>Email</label>
+        <input type="email" class="contact-input" placeholder="Tu correo electrónico" required>
+
+        <label>Mensaje</label>
+        <textarea class="contact-textarea" placeholder="Describe tu caso o consulta" required></textarea>
+
+        <button class="boton" type="submit">Enviar</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Enlaces rápidos | Redes | Aviso legal | Contacto</p>
+  </footer>
+
+</body>
+</html>

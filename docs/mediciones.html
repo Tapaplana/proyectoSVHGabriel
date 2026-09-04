@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="..\imagenes/favicon/favicon-32x32.png" rel="icon" type="image">
+    <title>Mediciones Electromagnéticas en Fenómenos Anómalos (UAP)</title>
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --accent: #38bdf8;
+            --accent-glow: rgba(56, 189, 248, 0.15);
+            --border: #334155;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background: linear-gradient(180deg, rgba(30,41,59,1) 0%, rgba(15,23,42,1) 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        .badge {
+            background-color: var(--accent-glow);
+            color: var(--accent);
+            border: 1px solid var(--accent);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin: 1rem 0 0.5rem 0;
+            letter-spacing: -0.02em;
+        }
+
+        header p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0.5rem auto 0 auto;
+            font-size: 1.1rem;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        h2 {
+            color: var(--accent);
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+            margin-top: 2.5rem;
+            font-size: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: var(--text-main);
+            font-size: 1.2rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-main);
+        }
+
+        ul li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 1.3rem;
+            position: absolute;
+            left: 0;
+            top: -2px;
+        }
+
+        ul li strong {
+            color: var(--accent);
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            margin-top: 4rem;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <span class="badge">Reporte Técnico e Instrumentación</span>
+        <h1>Variaciones de Campo Electromagnético</h1>
+        <p>Análisis de datos, frecuencias y perturbaciones detectadas durante avistamientos de Fenómenos Anómalos No Identificados (UAP).</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Patrones de Variación Detectados</h2>
+            <ul>
+                <li><strong>Picos en Radiofrecuencia (RF):</strong> Dispositivos multimodales registraron picos nítidos en la densidad del flujo de potencia en las frecuencias de <strong>1.8 GHz y 4 GHz</strong> en coincidencia con avistamientos visuales.</li>
+                <li><strong>Acumulación radial:</strong> Mediciones de intensidad demuestran que la abundancia de orbes luminosos se correlaciona con un incremento gradual de la energía del campo, disipándose por completo en la noche.</li>
+                <li><strong>Perturbaciones geomagnéticas:</strong> Magnetómetros y variómetros revelaron desviaciones bruscas en el entorno físico inmediato, afectando sistemas de orientación convencionales como brújulas.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Incidentes y Proyectos Clave</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>Proyecto Hessdalen & Campañas Costeras</h3>
+                    <p>Estaciones automatizadas implementaron transductores de campo electromagnético. Sus registros prueban que los fenómenos lumínicos interactúan directamente con la conductividad del aire y los campos terrestres locales.</p>
+                </div>
+                <div class="card">
+                    <h3>Incidente de Yemen</h3>
+                    <p>El fallo reportado de un misil Hellfire al intentar impactar un UAP fue clasificado como evidencia de una fuerte interacción electromagnética localizada. El objeto generó un campo capaz de neutralizar los sistemas del proyectil.</p>
+                </div>
+                <div class="card">
+                    <h3>Desclasificación Base San Martín</h3>
+                    <p>Documentos oficiales revelaron que el riómetro (encargado de medir la absorción de ondas de radio) marcó líneas idénticas y simultáneas en tres sistemas de registro independientes durante un evento anómalo.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Interpretación Científica de los Datos</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>1. Campos de Repulsión Tecnológica</h3>
+                    <p>Los análisis cinemáticos sugieren mecanismos de recolección de energía. Estructuras giratorias podrían convertir energía potencial del entorno en cinética, superando la gravedad mediante repulsión electrostática o magnética.</p>
+                </div>
+                <div class="card">
+                    <h3>2. Proyecciones de Energía Mediada</h3>
+                    <p>Corrientes teóricas proponen que los UAP son estructuras luminosas o electromagnéticas proyectadas remotamente. Esto explica sus cambios abruptos de dirección, aceleraciones extremas y firmas erráticas en sensores.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Documento de análisis de firmas físicas UAP. Generado con propósitos informativos y de investigación.</p>
+    </footer>
+
+</body>
+</html>
+

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="..\imagenes/favicon/favicon-32x32.png" rel="icon" type="image">
+    <title>UAP Task Force - Resumen Técnico</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --accent-color: #58a6ff;
+            --accent-glow: rgba(88, 166, 255, 0.15);
+            --text-primary: #c9d1d9;
+            --text-heading: #f0f6fc;
+            --text-muted: #8b949e;
+            --border-color: #30363d;
+            --tag-bg: #1f6feb22;
+            --tag-border: #1f6feb;
+            --alert-border: #d29922;
+            --alert-bg: rgba(210, 153, 34, 0.1);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            margin: 0;
+            padding: 30px 15px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+            border: 1px solid var(--border-color);
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: var(--tag-bg);
+            color: var(--accent-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            border: 1px solid var(--tag-border);
+            margin-bottom: 12px;
+        }
+
+        h1 {
+            color: var(--text-heading);
+            font-size: 2.2rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .summary-box {
+            background-color: rgba(13, 17, 23, 0.7);
+            border-left: 4px solid var(--accent-color);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 30px;
+            color: #e6edf3;
+            font-size: 1.02rem;
+        }
+
+        h2 {
+            color: var(--accent-color);
+            font-size: 1.4rem;
+            margin-top: 35px;
+            margin-bottom: 18px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 8px;
+        }
+
+        .grid-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin-top: 15px;
+        }
+
+        .card {
+            background-color: rgba(13, 17, 23, 0.5);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 18px;
+            transition: border-color 0.2s ease, transform 0.2s ease;
+        }
+
+        .card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .card-title {
+            color: var(--text-heading);
+            font-weight: 600;
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .alert-card {
+            border-left: 4px solid var(--alert-border);
+            background-color: var(--alert-bg);
+        }
+
+        ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        li strong {
+            color: var(--text-heading);
+        }
+
+        .category-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .category-item {
+            background-color: rgba(13, 17, 23, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 14px 18px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .category-number {
+            background-color: var(--accent-color);
+            color: #0d1117;
+            font-weight: bold;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.85rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .category-content strong {
+            color: var(--text-heading);
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .category-content {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        footer {
+            margin-top: 45px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                padding: 22px;
+            }
+            h1 {
+                font-size: 1.75rem;
+            }
+            .grid-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <span class="badge">EVALUACIÓN OFICIAL ODNI / DOD</span>
+        <h1>UAP Task Force — Resumen Técnico</h1>
+        <div class="subtitle">Evaluación de fenómenos aéreos no identificados detectados por sensores militares</div>
+
+        <div class="summary-box">
+            El <strong>Grupo de Trabajo sobre Fenómenos Aéreos No Identificados</strong> (<em>Unidentified Aerial Phenomena Task Force</em>, <strong>UAPTF</strong>), establecido por el Departamento de Defensa de los EE. UU., emitió su evaluación técnica preliminar a través de la Oficina del Director de Inteligencia Nacional (ODNI). El documento analiza <strong>144 incidentes documentados</strong> entre 2004 y 2021.
+        </div>
+
+        <h2>1. Hallazgos Principales de Sensores Militares</h2>
+        <div class="grid-cards">
+            <div class="card">
+                <span class="card-title">Naturaleza Física</span>
+                La mayoría de los UAP reportados corresponden a <strong>objetos físicos reales</strong> y no a anomalías ópticas, registrados simultáneamente por múltiples sensores (radar, FLIR, electroóptica y visual directos).
+            </div>
+            <div class="card">
+                <span class="card-title">Casos Inexplicados</span>
+                De los 144 casos, solo uno se identificó con alta confianza (un globo desinflado). Los <strong>143 restantes permanecen sin clasificar</strong> por limitaciones de datos o falta de marcos analíticos.
+            </div>
+            <div class="card alert-card">
+                <span class="card-title" style="color: #f2cc60;">Riesgo Operativo</span>
+                Se documentaron <strong>11 eventos de riesgo de colisión (*near misses*)</strong> con aeronaves militares, confirmando un peligro directo para la seguridad de vuelo.
+            </div>
+        </div>
+
+        <h2>2. Patrones Técnicos y de Vuelo Observados</h2>
+        <p>En un subconjunto de 18 incidentes, el UAPTF identificó firmas tecnológicas y dinámicas inusuales:</p>
+        <ul>
+            <li><strong>Dinámicas de Vuelo No Convencionales:</strong> Capacidad para permanecer estáticos contra vientos en altitud, realizar maniobras abruptas a gran velocidad y desplazarse sin medios visibles de propulsión.</li>
+            <li><strong>Gestión de Firma / Aceleración Extrema:</strong> Rápida aceleración y control de firma (modificación o reducción de la detectabilidad por sensores).</li>
+            <li><strong>Emisiones de Radiofrecuencia:</strong> Detección de energía en radiofrecuencia (RF) asociada a los objetos por parte de los sistemas integrados en plataformas aéreas militares.</li>
+        </ul>
+
+        <h2>3. Categorías de Explicación Evaluadas</h2>
+        <p>El UAPTF determinó que los fenómenos no responden a una sola causa y los estructuró en 5 categorías formales:</p>
+        
+        <ul class="category-list">
+            <li class="category-item">
+                <div class="category-number">1</div>
+                <div class="category-content">
+                    <strong>Basura / Interferencias Aéreas (Airborne Clutter)</strong>
+                    Globos, aves, vehículos aéreos no tripulados (drones) de uso recreativo o restos flotantes.
+                </div>
+            </li>
+            <li class="category-item">
+                <div class="category-number">2</div>
+                <div class="category-content">
+                    <strong>Fenómenos Atmosféricos Naturales</strong>
+                    Cristales de hielo, fluctuaciones térmicas o vapor de agua que generan lecturas en sensores infrarrojos o de radar.
+                </div>
+            </li>
+            <li class="category-item">
+                <div class="category-number">3</div>
+                <div class="category-content">
+                    <strong>Programas de Desarrollo de EE. UU.</strong>
+                    Tecnologías clasificadas desarrolladas por el gobierno estadounidense o la industria aeroespacial privada.
+                </div>
+            </li>
+            <li class="category-item">
+                <div class="category-number">4</div>
+                <div class="category-content">
+                    <strong>Sistemas de Adversarios Extranjeros</strong>
+                    Tecnologías de recolección de inteligencia o avances rupturistas desarrollados por naciones rivales.
+                </div>
+            </li>
+            <li class="category-item">
+                <div class="category-number">5</div>
+                <div class="category-content">
+                    <strong>Otros (Catch-all / Other)</strong>
+                    Casos que requieren avances en conocimiento científico o métodos de recolección adicionales para su caracterización.
+                </div>
+            </li>
+        </ul>
+
+        <h2>4. Conclusiones y Recomendaciones</h2>
+        <ul>
+            <li><strong>Sesgo de Recolección:</strong> La concentración de avistamientos cerca de zonas de entrenamiento militar responde a la mayor densidad de sensores avanzados en esas áreas.</li>
+            <li><strong>Estandarización de Reportes:</strong> Necesidad de estandarizar la recolección de datos entre el Departamento de Defensa y agencias de inteligencia para eliminar el estigma de reporte.</li>
+            <li><strong>Inversión Tecnológica:</strong> Resolver la naturaleza de estos fenómenos requiere mayor inversión en recursos analíticos, algoritmos de IA y sensores científicos dedicados.</li>
+        </ul>
+
+        <footer>
+            Documento Informativo — Resumen de Evaluación Técnica UAPTF / ODNI
+        </footer>
+    </div>
+
+</body>
+</html>
