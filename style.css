@@ -804,4 +804,8 @@ section {
     font-size: 14px;
     border-top: 1px solid #45a29e;
     margin-top: auto;
+    }
+.footer a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+  color: #807d7d;
 }
